@@ -1,0 +1,75 @@
+<div class="container">
+<form (ngSubmit)="searchFlights()">
+        <input type="text" name="borading" id="from" placeholder="From" [(ngModel)]="boarding">
+        <input type="text" name="departure" id="to" placeholder="To" [(ngModel)]="departure">
+        <input type="date" name="date" id="date" placeholder="Enter Date">
+        <input type="submit" value="search Flights" name="submit" id="submit" >
+</form>
+</div>
+
+<div id="flight_booking" class="mt-5" style="margin-left: 5%;">
+  <div class="row">
+    <ng-container>
+      <div class="card w-100" style="width: 100%;" *ngFor="let flight of flights">
+        <div class="d-flex align-items-center flight-card">
+          <div class="card-body">
+            <h2 class="flight-title" style="color: blue;">{{ flight.flight }}</h2>
+            <div class="flight-info d-flex justify-content-between">
+              <div>
+                <p class="text-muted">From: {{ flight.boarding }}</p>
+                <p class="text-muted">To: {{ flight.departure }}</p>
+              </div>
+              <div>
+              <p class="text-muted">Timings: {{ flight.starting_time }} - {{ flight.ending_time }}</p>
+              </div>
+              <h2 class="text-muted">INR: ${{ flight.ticket_price }}</h2>
+              <button type="button" routerLink="/flight_booking" class="btn btn-primary">
+                Book Ticket
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="flights.length === 0" class="no-flights d-flex justify-content-center">
+      No flights found.
+    </div>
+  </div>
+</div>
+
+         
+<div class="offers">
+        <h1>
+                Offers
+        </h1>
+</div>
+<div class="row mt-5">
+        <div class="d-flex" style="padding-left:40px">
+          <div class="card p-0" style="width: 300px; height: 250px; margin-left: 180px;box-shadow: 2px 3px 2px rgb(210, 249, 255);">
+            <img class="card-img-top" style="width: 100%; object-fit: cover;" src="https://www.bigbreaks.com/Content/Images/offers/Flights/bigbreaks-banners_360_243_ICICIINT.png" alt="Card image">
+            <div class="card-body">
+              <h6 class="text-primary" style="padding-bottom: 3px;">Apply Coupon code:</h6>
+            </div>
+          </div>
+        
+          <div class="card p-0" style="width: 300px; height: 250px; margin-left: 80px;box-shadow: 2px 3px 2px rgb(210, 249, 255);">
+                <img class="card-img-top" style="width: 100%; object-fit: cover;" src="https://www.bigbreaks.com/Content/Images/offers/Flights/bigbreaks-banners_360_243_bbicic10.png" alt="Card image">
+                <div class="card-body">
+                <h6 class="text-primary">Apply Coupon code:</h6>
+                </div>
+          </div>
+        
+          <div class="card p-0" style="width: 300px; height: 250px; margin-left: 80px;box-shadow: 2px 3px 2px rgb(210, 249, 255);">
+                <img class="card-img-top" style="width: 100%; object-fit: cover;" src="https://www.bigbreaks.com/Content/Images/offers/Flights/bigbreaks-banners_360_243_bb10.png" alt="Card image">
+                <div class="card-body">
+                <h6 class="text-primary">Apply Coupon code:</h6>
+                </div>
+          </div>
+        </div>
+</div>
+      
+      
+      
+      
+      
+    

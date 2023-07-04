@@ -1,0 +1,91 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  background-image: url("https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/2326x800_Coach_buses_Top_image?qlt=82&wid=1440&ts=1634821911956&dpr=off&fit=constrain");
+  background-size: cover;
+  box-shadow: 0 10px 9px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  background-position: center;
+}
+
+form {
+  display: flex;
+  margin-top: 10%;
+  padding-bottom: 50px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="submit"] {
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+#from {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid black;
+}
+
+#to,
+#date {
+  border: 1px solid black;
+}
+
+#submit {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#submit:hover {
+  background-color: #c82333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.offers{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+h1{
+  border-bottom: 2px solid rgb(64, 51, 255);
+  padding-bottom: 10px;
+}
+.bus-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.bus-title {
+  margin-bottom: 10px;
+}
+
+.bus-info {
+  margin-bottom: 15px;
+}
+
+.bus-timings {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.no-buses {
+  margin-top: 20px;
+  font-style: italic;
+  color: #6c757d;
+}
+
+

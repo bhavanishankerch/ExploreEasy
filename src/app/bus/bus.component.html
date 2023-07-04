@@ -1,0 +1,80 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class="container">
+  <form (ngSubmit)="searchBuses()">
+    <input type="text" name="boarding" id="from" placeholder="From" [(ngModel)]="boarding">
+    <input type="text" name="departure" id="to" placeholder="To" [(ngModel)]="departure">
+    <input type="date" name="date" id="date" placeholder="Enter Date">
+    <input type="submit" id="submit" value="Search Buses">
+  </form>
+</div>
+
+
+<div id="bus_booking" class="mt-5" style="margin-left: 5%;">
+  <div class="row">
+    <ng-container>
+      <div class="card w-100" style="width: 100%;" *ngFor="let bus of buses">
+        <div class="d-flex align-items-center bus-card">
+          <div class="card-body">
+            <h2 class="bus-title" style="color: blue;">{{ bus.travels_name }}</h2>
+            <div class="bus-info d-flex justify-content-between">
+              <div>
+                <p class="text-muted">{{ bus.bus_type }}</p>
+              </div>
+              <div>
+                <p class="text-muted">{{ bus.boarding }} &nbsp; {{bus.departure}}</p>
+                <p class="text-muted">{{ bus.starting_time }} &nbsp;{{ bus.ending_time }}</p>
+              </div>
+              <h2 class="text-muted">INR: ${{ bus.ticket_price }}</h2>
+              <button type="button" routerLink="/bus_booking" class="btn btn-primary">
+                Book Ticket
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="buses.length === 0" class="no-buses d-flex justify-content-center">
+      No buses found.
+    </div>
+  </div>
+</div>
+
+
+    <div class="offers">
+      <h1>
+        Offers
+      </h1>
+    </div>
+    <div class="row mt-5">
+      <div class="d-flex" style="padding-left:40px">
+        <div class="card p-0"
+          style="width: 300px; height: 250px; margin-left: 250px;box-shadow: 2px 3px 2px rgb(210, 249, 255);">
+          <img class="card-img-top" style="width: 100%; object-fit: cover;"
+            src="https://offercdn.paytm.com/blog/2021/06/HAPPYBUS_750x500.png"
+            alt="Card image">
+          <div class="card-body">
+            <h6 class="text-primary" style="padding-bottom: 3px;">Apply Coupon code:</h6>
+          </div>
+        </div>
+
+        <div class="card p-0"
+          style="width: 300px; height: 250px; margin-left: 80px;box-shadow: 2px 3px 2px rgb(210, 249, 255);">
+          <img class="card-img-top" style="width: 100%; object-fit: cover;"
+            src="https://i.pinimg.com/originals/e8/f2/65/e8f2659be1c8862b5cdc610eece3090b.png"
+            alt="Card image">
+          <div class="card-body">
+            <h6 class="text-primary">Apply Coupon code:</h6>
+          </div>
+        </div>
+
+        <div class="card p-0"
+          style="width: 300px; height: 250px; margin-left: 80px;box-shadow: 2px 3px 2px rgb(210, 249, 255);">
+          <img class="card-img-top" style="width: 100%; object-fit: cover;"
+            src="https://miro.medium.com/max/580/0*yCV4eU_2RVGOecNj.jpg"
+            alt="Card image">
+          <div class="card-body">
+            <h6 class="text-primary">Apply Coupon code:</h6>
+          </div>
+        </div>
+      </div>
+    </div>

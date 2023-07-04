@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/010/227/332/non_2x/travel-and-flight-ticket-advertising-template-with-airplane-in-the-sky-colorful-background-in-paper-cut-style-illustration-vector.jpg");
+    background-size: cover;
+    box-shadow: 0 10px 9px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    background-position: center;
+  }
+  form {
+    display: flex;
+    margin-top: 10%;
+    padding-bottom: 50px;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="submit"] {
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 0;
+  }
+  
+  #from {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid black;
+  }
+  
+  #to,
+  #date {
+    border: 1px solid black;
+  }
+  
+  #submit {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #submit:hover {
+    background-color: #c82333;
+  }
+  .offers{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  h1{
+    border-bottom: 2px solid rgb(64, 51, 255);
+    padding-bottom: 10px;
+  }
+  .flight-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .flight-title {
+    margin-bottom: 10px;
+  }
+  
+  .flight-info {
+    margin-bottom: 15px;
+  }
+  
+  .flight-timings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .no-flights {
+    margin-top: 20px;
+    font-style: italic;
+    color: #6c757d;
+  }
+  

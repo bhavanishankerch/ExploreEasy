@@ -1,0 +1,84 @@
+<div class="container">
+    <form (ngSubmit)="searchHotels()" class="">
+        <input type="text" name="city_name" id="from" placeholder="Enter City" [(ngModel)]="city_name">
+        <input type="submit" value="search Hotels" name="submit" id="submit" >
+    </form>
+    </div>
+
+    <div id="hotel" class="mt-5" style="margin-left: 5%;">
+      <div class="row">
+        <div id="hotelCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let hotelGroup of hotels | chunk: 3; let i = index" [class.active]="i === 0">
+              <div class="row">
+                <div class="col-12 col-md-4" *ngFor="let hotel of hotelGroup">
+                  <div class="card" style="width: 400px; padding: 20px;">
+                    <div class="d-flex">
+                      <img class="card-img-left rounded-circle" src="{{hotel.image}}" alt="Card image" style="width: 150px; box-shadow: 3px 7px 3px rgb(57, 57, 57);" height="150px">
+                      <div class="card-body">
+                        <h4 class="card-title">{{hotel.hotel_name}}</h4>
+                        <h6 class="text-success">INR: {{ hotel.hotel_price | currency: 'INR' }}</h6>
+                        <h6 class="text-primary">Ratings: {{hotel.rating}} / 5</h6>
+                        <h6 class="text-primary">{{hotel.city_name}}</h6>
+                      </div>
+                    </div>
+                    <button type="button" routerLink="/hotel_booking" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#myModal">
+                      Book Rooms
+                    </button>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4" *ngIf="hotelGroup.length < 3">
+                  <!-- Empty column to fill the gap when there are only two cards in a group -->
+                </div>
+              </div>
+              <div *ngIf="hotelGroup.length > 0">
+              <button class="carousel-control-prev" type="button" data-bs-target="#hotelCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon custom-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#hotelCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon custom-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            </div>
+            <div *ngIf="hotels.length === 0" class="no-hotels d-flex justify-content-center">
+              No hotels found.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+    
+    <div class="offers mt-5">
+        <h1>
+                Holiday Packages
+        </h1>
+    </div>
+
+    <div class="row mt-5">
+      <div class="d-flex" style="padding-left:40px">
+        <div class="card p-0" style="width: 300px; height: 250px; margin-left: 180px;box-shadow: 2px 3px 2px rgb(210, 249, 255);">
+          <img class="card-img-top" style="width: 100%; object-fit: cover;" src="https://www.bigbreaks.com/Content/Images/offers/Flights/bigbreaks-banners_360_243_ICICIINT.png" alt="Card image">
+          <div class="card-body">
+            <h6 class="text-primary" style="padding-bottom: 3px;">Apply Coupon code:</h6>
+          </div>
+        </div>
+      
+        <div class="card p-0" style="width: 300px; height: 250px; margin-left: 80px;box-shadow: 2px 3px 2px rgb(210, 249, 255);">
+              <img class="card-img-top" style="width: 100%; object-fit: cover;" src="https://www.bigbreaks.com/Content/Images/offers/Flights/bigbreaks-banners_360_243_bbicic10.png" alt="Card image">
+              <div class="card-body">
+              <h6 class="text-primary">Apply Coupon code:</h6>
+              </div>
+        </div>
+      
+        <div class="card p-0" style="width: 300px; height: 250px; margin-left: 80px;box-shadow: 2px 3px 2px rgb(210, 249, 255);">
+              <img class="card-img-top" style="width: 100%; object-fit: cover;" src="https://www.bigbreaks.com/Content/Images/offers/Flights/bigbreaks-banners_360_243_bb10.png" alt="Card image">
+              <div class="card-body">
+              <h6 class="text-primary">Apply Coupon code:</h6>
+              </div>
+        </div>
+      </div>
+</div>
+    
+    

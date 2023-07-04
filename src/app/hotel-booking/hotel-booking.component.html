@@ -1,0 +1,82 @@
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-md-push-5">
+                    <div class="booking-cta">
+                        <h1>Explore Easy</h1>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-pull-7">
+                    <div class="booking-form">
+                        <form #userForm="ngForm">
+                            <div class="form-group">
+                                <span class="form-label">User Name</span>
+                                <input class="form-control" name="user_name" type="text" placeholder="Enter your name" [(ngModel)]="hotellist.user_name" #user_name="ngModel">
+                            </div>
+                            <div class="form-group">
+                                <span class="form-label">Aadhar Number</span>
+                                <input class="form-control" name="aadhar_number" type="text" placeholder="Enter Passport Number" [(ngModel)]="hotellist.aadhar_number" #aadhar_number="ngModel">
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Check In</span>
+                                        <input class="form-control" name="check_in" type="date" required [(ngModel)]="hotellist.check_in" #check_in="ngModel">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Check out</span>
+                                        <input class="form-control" name="check_out" type="date" required [(ngModel)]="hotellist.check_out" #check_out="ngModel">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Contact</span>
+                                        <input class="form-control" name="mobile_number" type="text" required  placeholder="Enter your Mobile Number" [(ngModel)]="hotellist.mobile_number" #mobile_number="ngModel">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Email Id</span>
+                                        <input class="form-control" name="email_id" type="email" required placeholder="Enter your Email" [(ngModel)]="hotellist.email_id" #email_id="ngModel">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-btn">
+                                <button type="submit" class="submit-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bookingModalLabel">Booking Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>User Name:</strong> {{ hotellist.user_name }}</p>
+          <p><strong>Aadhar Number:</strong> {{ hotellist.aadhar_number }}</p>
+          <p><strong>Check In:</strong> {{ hotellist.check_in }}</p>
+          <p><strong>Check Out:</strong> {{ hotellist.check_out }}</p>
+          <p><strong>Contact Number:</strong> {{ hotellist.mobile_number }}</p>
+          <p><strong>Email Id:</strong> {{ hotellist.email_id }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="onConfirm()">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
